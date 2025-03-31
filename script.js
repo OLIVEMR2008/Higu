@@ -25,12 +25,15 @@ botaoDeAcessibilidade.addEventListener('click', function (){
    const alternaContraste = document.getElementById('alterna-contraste')
    alternaContraste.addEventListener('click', function(){
     document.body.classList.toggle('alto-contraste')
+    const mapaVisivel = botaoMapa.getAttribute('aria-expanded') === 'true';
+    const botaoMudaCor = document.getElementById("botao-muda-cor");
+    botaoMudaCor.addEventListener("click", function () {
+  document.body.classList.toggle("fundo-escuro");
+});
 })
-const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
 const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
 botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
 ScrollReveal().reveal('#inicio', { delay: 500 });
-ScrollReveal().reveal('#inicio', { delay: 500 });
 ScrollReveal().reveal('#tropicalia', { delay: 500 });
 ScrollReveal().reveal('#galeria', { delay: 500 });
-ScrollReveal().reveal('#contato', { delay: 500 });
+ScrollReveal().reveal('#contato', { delay: 1000 });
